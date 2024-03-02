@@ -4,6 +4,8 @@
  */
 package br.gtcc.gtcc.config;
 
+import br.gtcc.gtcc.model.ApresentationBanca;
+import br.gtcc.gtcc.model.Data;
 import br.gtcc.gtcc.model.TCC;
 import br.gtcc.gtcc.model.Users;
 import org.dizitart.no2.Nitrite;
@@ -39,6 +41,35 @@ public class DBConfig {
         return db;
     }
     
-   
+    @Bean 
+    public ObjectRepository<Users> repositoryUsers() {
+        
+        return dataBase().getRepository(Users.class);
+    
+    }
+
+    @Bean 
+    public ObjectRepository<TCC> repositoryTCC() {
+        
+        return dataBase().getRepository(TCC.class);
+    
+    }
+    
+    @Bean 
+    public ObjectRepository<Data> repositoryData() {
+        
+        return dataBase().getRepository(Data.class);
+    
+    }
+    
+    @Bean 
+    public ObjectRepository<ApresentationBanca> repositoryApresentation() {
+        
+        return dataBase().getRepository(ApresentationBanca.class);
+    
+    }
+    
+    
+    
     
 }
