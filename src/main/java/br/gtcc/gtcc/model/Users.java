@@ -29,4 +29,77 @@ public class Users {
     private List<UserType> userType;    // Tipo de usuário podendo ser PROFESSOR, ALUNO, COORDENADOR, e tambem COORDENADOR/PROFESSOR
     private Date birthdate;             // Data de aniversário do usuário
     private int cellphone;              // Telefone do usuário
+
+    public Users(NitriteId id, String name, String email, String registration, List<UserType> userType, Date birthdate, int cellphone) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.registration = registration;
+        this.userType = userType;
+        this.birthdate = birthdate;
+        this.cellphone = cellphone;
+    }
+
+    public Users(){
+    
+    }
+
+    public NitriteId getId() {
+        return id;
+    }
+
+    public void setId(NitriteId id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
+    public List<UserType> getUserType() {
+        return userType;
+    }
+
+    public void setUserType(List<UserType> userType) {
+        this.userType = userType;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public int getCellphone() {
+        return cellphone;
+    }
+
+    public void setCellphone(int cellphone) {
+        this.cellphone = cellphone;
+    }
+
+    
+    
 }
