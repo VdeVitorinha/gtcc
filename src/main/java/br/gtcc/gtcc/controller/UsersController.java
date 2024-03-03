@@ -63,4 +63,11 @@ public class UsersController {
     
     }
     
+    @GetMapping("/get_user")
+    public Users getUser(@RequestParam(required = false) Users user){
+        
+        return service.getUsers(user);
+        
+    }
+    
 }
