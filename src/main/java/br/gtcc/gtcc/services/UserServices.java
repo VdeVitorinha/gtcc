@@ -121,13 +121,54 @@ public class UserServices {
 
     public List<Users> getAllUsers(){
 
-        return repositoryUsers.find(FindOptions.orderBy("name", SortOrder.Ascending)).toList();
+        List<Users> list = repositoryUsers.find(FindOptions.orderBy("name", SortOrder.Ascending)).toList(); 
+        
+        if( list != null){
+        
+             return list; 
+            
+        }else{
+        
+            //Exeção caso não encontra nada
+            return null;
+            
+        }
 
     }
     
     public Users getUsers(Users users){
         
-        return repositoryUsers.find(FluentFilter.where("registration").eq(users.getRegistration())).firstOrNull();
+        if( users != null ){
+            
+            if( users.getRegistration() != null ){
+            
+                //Realiza  buscano banco de dados
+               Users user = repositoryUsers.find(FluentFilter.where("registration").eq(users.getRegistration())).firstOrNull();
+               
+               if( user != null ){
+               
+                    return user;
+                   
+               }else{
+               
+                   //Exeção caso o usuário não é encontrado
+                   return null;
+               
+               }
+                
+            }else{
+                
+                //Execeção caso o usuário não tenha uma matricula
+                return null;
+                
+            }
+            
+        } else {
+        
+            //Execeção caso o usuário fornecido seja nulo 
+            return null;
+                    
+        }
     
     }
     
